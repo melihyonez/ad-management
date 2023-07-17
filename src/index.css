@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .title-text {
+    @apply text-center font-semibold leading-[3.75rem] tracking-tight max-sm:text-xl max-md:text-2xl max-lg:text-3xl text-5xl;
+  }
+  .main-button {
+    @apply px-4 py-2 bg-primary-black text-white rounded-3xl font-semibold leading-9
+    whitespace-nowrap text-ellipsis overflow-hidden inline-block max-w-[12rem]
+    max-lg:text-xs text-sm capitalize
+    max-xl:px-3 max-lg:px-2 max-md:px-2 max-sm:px-2
+    max-xl:py-2 max-lg:py-1.5 max-md:py-1
+  }
+  .main-button.passive {
+    @apply text-primary-gray-300 bg-primary-gray-200
+  }
+  .divider {
+    @apply bg-primary-gray-300 h-auto w-[1px]
+  }
+  .slide-wrapper {
+    @apply max-h-[70vh] overflow-hidden m-auto relative will-change-transform shrink-0
+  }
+  .slide-wrapper-reverse {
+    @apply slide-wrapper flex items-end
+  }
+  .slide-shadow-bottom {
+    @apply backdrop-blur-[0.5px] bg-gradient-to-t from-white to-transparent h-24 absolute bottom-0 w-full z-10 select-none
+  }
+  .slide-shadow-top {
+    @apply backdrop-blur-[0.5px] bg-gradient-to-b from-white to-transparent h-24 absolute top-0 w-full z-10 select-none
+  }
+  .slide-icon-wrapper {
+    @apply flex flex-col gap-12 shrink-0
+  }
+  .slide-icon-box {
+    @apply bg-primary-gray-50 rounded-xl p-10 max-lg:p-5
+  }
+  .slide-icon-box img {
+    @apply w-14 h-14 max-w-fit max-lg:w-7 max-lg:h-7
+  }
+  .animate-slide {
+    animation: slide 14s linear infinite;
+    transform: translate3d(0, 0, 0);
+    @media only screen and (max-width: 1024px) {
+      animation: slide-lg 14s linear infinite;
+    }
+  }
+  .animate-slide-reverse {
+    animation: slide-reverse 14s linear infinite;
+    transform: translate3d(0, 0, 0);
+    @media only screen and (max-width: 1024px) {
+      animation: slide-reverse-lg 14s linear infinite;
+    }
+  }
+  @keyframes slide {
+    100% { 
+      transform: translateY(-67.5%);
+    }
+  }
+  @keyframes slide-lg {
+    100% { 
+      transform: translateY(-67.8%);
+    }
+  }
+  @keyframes slide-reverse {
+    100% { 
+      transform: translateY(67.5%);
+    }
+  }
+  @keyframes slide-reverse-lg {
+    100% { 
+      transform: translateY(67.8%);
+    }
+  }
+}
